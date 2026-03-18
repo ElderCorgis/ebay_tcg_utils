@@ -10,7 +10,8 @@ wheels/
 .venv
 .claude
 
-# Test Data
+# Test data and runtime artifacts
 refs/
 *.png
 *.csv
+sheet_url.txt

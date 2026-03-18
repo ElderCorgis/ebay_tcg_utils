@@ -1,9 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "tcg-utils"
+name = "ebay-tcg-utils"
 version = "0.1.0"
-description = "Add your description here"
+description = "eBay packing slip consolidation tools for TCG sellers"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 dependencies = [
     "watchdog>=6.0.0",
+    "pandas>=2.0.0",
+    "pymupdf",
+    "reportlab",
 ]
+
+[project.scripts]
+tcg-merge = "tcg_utils.merge:main"
+tcg-watch = "tcg_utils.watch:main"
+tcg-host  = "tcg_utils.native_host:main"
+tcg-setup = "tcg_utils.native_host:setup"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tcg_utils"]
