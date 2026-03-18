@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TCG Utils",
+  "version": "0.1.0",
+  "description": "Automatically generate eBay packing slips as orders arrive.",
+
+  "permissions": ["nativeMessaging", "storage"],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TCG Utils"
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tcg-utils@twocorgistcg.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}

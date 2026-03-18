@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCG Utils</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>TCG Utils</h1>
+    <div id="status-badge" class="badge badge--stopped">Stopped</div>
+  </header>
+
+  <main>
+    <section class="card" id="config-section">
+      <h2>Settings</h2>
+
+      <label for="watch-dir">Watch folder</label>
+      <div class="input-row">
+        <input type="text" id="watch-dir" placeholder="e.g. C:\Users\Alex\Downloads" spellcheck="false" />
+      </div>
+
+      <label for="output-dir">Output folder</label>
+      <div class="input-row">
+        <input type="text" id="output-dir" placeholder="e.g. C:\Users\Alex\Documents\packing_slips" spellcheck="false" />
+      </div>
+
+      <label for="header-height">Header height (inches)</label>
+      <input type="number" id="header-height" min="0.5" max="6" step="0.1" value="2.5" />
+    </section>
+
+    <div class="actions">
+      <button id="btn-start" class="btn btn--primary">Start Watching</button>
+      <button id="btn-stop" class="btn btn--danger" disabled>Stop</button>
+    </div>
+
+    <section class="card" id="log-section">
+      <h2>
+        Activity
+        <button id="btn-clear-log" class="btn btn--ghost btn--small">Clear</button>
+      </h2>
+      <div id="log-output" role="log" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="extension-id-hint"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
